@@ -1,0 +1,4 @@
+build/**
+mt.code-workspace
+.vscode
+resource/**

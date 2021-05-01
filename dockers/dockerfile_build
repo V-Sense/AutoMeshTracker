@@ -1,0 +1,41 @@
+FROM mesh_tracker:cgal
+
+ARG NUM_JOBS=8
+RUN echo "Number of jobs to execute for make deps: " 
+RUN echo ${NUM_JOBS}
+
+# add GCC 9 and make it default compiller
+RUN add-apt-repository ppa:ubuntu-toolchain-r/test \
+	&& apt-get update && apt-get install -y --no-install-recommends \
+	gcc-9 g++-9 \
+	&& export CC=/usr/bin/gcc-9 \
+	&& export CXX=/usr/bin/g++-9 \
+	&& apt-get autoremove -y  \
+	&& apt-get clean
+
+# fix suitesparse linking error
+RUN sed -i 's/<cholmod.h>/<suitesparse\/cholmod.h>/g' /usr/include/eigen3/Eigen/CholmodSupport 
+
+RUN cd / && wget https://github.com/Kitware/CMake/releases/download/v3.18.3/cmake-3.18.3-Linux-x86_64.tar.gz && tar -xvf *.tar.gz && rm cmake-3.18.3-Linux-x86_64.tar.gz && mv cmake-3.18.3-Linux-x86_64 cmake-3.18.3
+
+WORKDIR /MeshTracker
+COPY /CMakeLists.txt /MeshTracker/CMakeLists.txt
+COPY /meshtracker 	/MeshTracker/meshtracker
+
+RUN mkdir -p build && cd build && /cmake-3.18.3/bin/cmake -DCMAKE_BUILD_TYPE=Release .. && make -j${NUM_JOBS} && make install
+# RUN sed -i.bak "/\b\(__CUDACC_VER__ is no longer supported\)\b/d" /usr/local/cuda/include/crt/common_functions.h
+
+# Sometimes need to update shared lib cache
+RUN ldconfig
+
+COPY /resource/ /MeshTracker/resource/
+
+# Third-Party Resources
+RUN cd /MeshTracker/resource/thirdparty && wget https://instant-meshes.s3.eu-central-1.amazonaws.com/instant-meshes-linux.zip && unzip *.zip && mv 'Instant Meshes' Instant_Meshes && rm *.zip
+
+RUN mkdir -p /input
+RUN mkdir -p /result/smooth
+
+# Tests
+RUN sh /MeshTracker/resource/scripts/dl_tests.sh
+

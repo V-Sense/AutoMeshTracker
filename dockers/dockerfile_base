@@ -1,0 +1,59 @@
+FROM ubuntu:20.04
+
+ARG NUM_JOBS
+RUN echo "Number of jobs to execute for make deps: " 
+RUN echo ${NUM_JOBS}
+
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+		build-essential \
+		git \
+		wget \
+		unzip \
+		cmake \
+		cmake-curses-gui \
+		libgtk2.0-dev \
+		pkg-config \
+		libavcodec-dev \
+		libavformat-dev \
+		python3-dev \
+		python3-numpy \
+		python3-pip \
+		python-setuptools \
+		libtbb-dev \
+		libjpeg-dev \
+		libpng-dev \
+		libtiff-dev \
+		mpi-default-dev \
+		openmpi-bin \
+		openmpi-common \
+		libflann-dev \
+		libeigen3-dev \
+		libboost-all-dev \
+		libvtk6-dev \
+		libqhull* \
+		freeglut3-dev \
+		libglew-dev \
+		pkg-config \
+		libproj-dev \
+		libatlas-base-dev \
+		libsuitesparse-dev \
+		libassimp-dev \
+		libglfw3-dev \
+		libglfw3 \
+		cimg-dev \
+		graphviz \
+		lcov \
+		ca-certificates \
+		software-properties-common \
+		g++ \
+		qt5-qmake \
+		qtscript5-dev \
+		libqt5xmlpatterns5-dev \
+		libqt5opengl5-dev \
+		assimp-utils \
+		nano \
+		lz4 \
+		xvfb \
+		&& rm -rf /var/lib/apt/lists/*
+
+RUN cd / && wget https://github.com/Kitware/CMake/releases/download/v3.18.3/cmake-3.18.3-Linux-x86_64.tar.gz && tar -xvf *.tar.gz && rm cmake-3.18.3-Linux-x86_64.tar.gz && mv cmake-3.18.3-Linux-x86_64 cmake-3.18.3

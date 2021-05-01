@@ -1,0 +1,31 @@
+FROM mesh_tracker:meshlab
+
+ARG NUM_JOBS=3
+RUN echo "Number of jobs to execute for make deps: " 
+RUN echo ${NUM_JOBS}
+
+# Install VTK-8.2.0 first 
+WORKDIR /
+RUN wget https://www.vtk.org/files/release/8.2/VTK-8.2.0.zip && unzip VTK-8.2.0.zip && rm VTK-8.2.0.zip
+
+WORKDIR /VTK-8.2.0
+RUN mkdir build && cd build \
+    && cmake -DCMAKE_BUILD_TYPE=Release .. \
+	&& make -j${NUM_JOBS} \
+	&& make install
+
+WORKDIR /
+
+# PCL 1.8.1 # pull a fixed cmake file from future commit to fix lz4 issue
+RUN git clone https://github.com/PointCloudLibrary/pcl.git 
+RUN cd pcl \
+	&& git checkout f38c3cfd496c89b04858ebecf6f7afe4ad4bce50 \
+	# && git checkout d98313133b014553ab1b1b5b112f9aade837d55c cmake/Modules/FindFLANN.cmake \ 
+	&& mkdir build \
+	&& cd build \
+	&& cmake -DBUILD_GPU=OFF -DBUILD_visualization=OFF -DCMAKE_BUILD_TYPE=Release .. \
+	&& make -j${NUM_JOBS} \
+	&& make install \
+	&& cd ../../ \
+	&& rm -rf pcl \
+	&& cd

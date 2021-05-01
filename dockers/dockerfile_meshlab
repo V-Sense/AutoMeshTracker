@@ -1,0 +1,27 @@
+FROM mesh_tracker:base
+
+ARG NUM_JOBS
+
+RUN git clone --recursive --branch Meshlab-2020.03 https://github.com/cnr-isti-vclab/meshlab.git
+# WORKDIR /meshlab/
+# RUN git checkout f0a3e261ea3abf5ad3067a875b8a90f0dc2d1422
+
+# Running to ovveride "sudo" in 0_setup_env_ubuntu.sh
+RUN apt-get update 
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get install -y qt5-default qttools5-dev-tools qtscript5-dev libqt5xmlpatterns5-dev mesa-common-dev libglu1-mesa-dev lib3ds-dev libglew-dev libeigen3-dev libopenctm-dev libgmp-dev libqhull-dev
+
+
+# #  set meshlabserver build on by default
+# RUN sed -i 's/#add_subdirectory(meshlabserver)/add_subdirectory(meshlabserver)/g' /meshlab/src/CMakeLists.txt
+WORKDIR /meshlab/install/linux/
+RUN sh linux_build.sh
+
+RUN export PATH=${PATH}:/meshlab/distrib
+
+WORKDIR /
+
+# To actually use meshlabserver you need to use a virtual framebuffer and export the display 
+
+# Xvfb :100
+# export DISPLAY=:100.0

@@ -1,0 +1,18 @@
+FROM mesh_tracker:pcl
+
+ARG NUM_JOBS=3
+RUN echo "Number of jobs to execute for make deps: " 
+RUN echo ${NUM_JOBS}
+
+# Fixes no GMP warning
+RUN apt-get install -y libmpfr-dev libgmp-dev libboost-all-dev
+
+# CGAL 5.2
+RUN git clone https://github.com/CGAL/cgal.git \
+		&& cd cgal \
+		&& git checkout 485e672c26e71b2f10be2e48e5c98ed83e3762f7 \
+		&& mkdir build \
+		&& cd build \
+		&& cmake -DCGAL_HEADER_ONLY=OFF -DCMAKE_BUILD_TYPE=Release .. \
+		&& make -j${NUM_JOBS} \
+		&& make install 
