@@ -1,0 +1,14 @@
+<!DOCTYPE FilterScript>
+<FilterScript>
+ <filter name="Transform: Scale, Normalize">
+  <Param isxmlparam="0" type="RichFloat" tooltip="Scaling" name="axisX" value="1" description="X Axis"/>
+  <Param isxmlparam="0" type="RichFloat" tooltip="Scaling" name="axisY" value="1" description="Y Axis"/>
+  <Param isxmlparam="0" type="RichFloat" tooltip="Scaling" name="axisZ" value="1" description="Z Axis"/>
+  <Param isxmlparam="0" type="RichBool" tooltip="If selected an uniform scaling (the same for all the three axis) is applied (the X axis value is used)" name="uniformFlag" value="true" description="Uniform Scaling"/>
+  <Param enum_val1="barycenter" isxmlparam="0" enum_cardinality="3" type="RichEnum" enum_val2="custom point" tooltip="Choose a method" name="scaleCenter" value="0" description="Center of scaling:" enum_val0="origin"/>
+  <Param z="0" isxmlparam="0" x="0" type="RichPoint3f" y="0" tooltip="This scaling center is used only if the 'custom point' option is chosen." name="customCenter" description="Custom center"/>
+  <Param isxmlparam="0" type="RichBool" tooltip="If selected, the object is scaled to a box whose sides are at most 1 unit lenght" name="unitFlag" value="true" description="Scale to Unit bbox"/>
+  <Param isxmlparam="0" type="RichBool" tooltip="The transformation is explicitly applied, and the vertex coordinates are actually changed" name="Freeze" value="true" description="Freeze Matrix"/>
+  <Param isxmlparam="0" type="RichBool" tooltip="If selected the filter will be applied to all visible mesh layers" name="allLayers" value="false" description="Apply to all visible Layers"/>
+ </filter>
+</FilterScript>

@@ -1,0 +1,15 @@
+<!DOCTYPE FilterScript>
+<FilterScript>
+ <xmlfilter name="Surface Reconstruction: Screened Poisson">
+  <xmlparam value="0" name="cgDepth"/>
+  <xmlparam value="false" name="confidence"/>
+  <xmlparam value="6" name="depth"/>
+  <xmlparam value="5" name="fullDepth"/>
+  <xmlparam value="8" name="iters"/>
+  <xmlparam value="1" name="pointWeight"/>
+  <xmlparam value="true" name="preClean"/>
+  <xmlparam value="1.0" name="samplesPerNode"/>
+  <xmlparam value="1.1" name="scale"/>
+  <xmlparam value="false" name="visibleLayer"/>
+ </xmlfilter>
+</FilterScript>

@@ -1,0 +1,23 @@
+<!DOCTYPE FilterScript>
+<FilterScript>
+ <filter name="Transform: Translate, Center, set Origin">
+  <Param type="RichEnum" description="Transformation:" value="3" enum_val0="XYZ translation" enum_val3="Set new Origin" enum_val1="Center on Scene BBox" tooltip="[XYZ translation] adds X,Y and Z offset to Layer transformation, [Center on BBox] moves Layer Origin to the Bounding Box center, [Set new Origin] moves Layer Origin to a specific point" name="traslMethod" enum_cardinality="4" isxmlparam="0" enum_val2="Center on Layer BBox"/>
+  <Param type="RichDynamicFloat" min="-2.35745" description="X Axis" value="0" tooltip="when using [XYZ translation], amount of translation along the X axis (in model units)" name="axisX" max="2.35745" isxmlparam="0"/>
+  <Param type="RichDynamicFloat" min="-2.35745" description="Y Axis" value="0" tooltip="when using [XYZ translation], amount of translation along the Y axis (in model units)" name="axisY" max="2.35745" isxmlparam="0"/>
+  <Param type="RichDynamicFloat" min="-2.35745" description="Z Axis" value="0" tooltip="when using [XYZ translation], amount of translation along the Z axis (in model units)" name="axisZ" max="2.35745" isxmlparam="0"/>
+  <Param type="RichPoint3f" description="New Origin:" y="4.47" z="-0.6147" tooltip="when using [Set new Origin], this is the location of the new Origin." name="newOrigin" isxmlparam="0" x="0.5591"/>
+  <Param type="RichBool" description="Freeze Matrix" value="false" tooltip="The transformation is explicitly applied, and the vertex coordinates are actually changed" name="Freeze" isxmlparam="0"/>
+  <Param type="RichBool" description="Apply to all visible Layers" value="false" tooltip="If selected the filter will be applied to all visible mesh layers" name="allLayers" isxmlparam="0"/>
+ </filter>
+ <filter name="Matrix: Freeze Current Matrix">
+  <Param type="RichBool" description="Apply to all visible Layers" value="false" tooltip="If selected the filter will be applied to all visible mesh layers" name="allLayers" isxmlparam="0"/>
+ </filter>
+ <filter name="Transform: Align to Principal Axis">
+  <Param type="RichBool" description="Use vertex" value="true" tooltip="If selected, only the vertices of the mesh are used to compute the Principal Axis. Mandatory for point clouds or for non water tight meshes" name="pointsFlag" isxmlparam="0"/>
+  <Param type="RichBool" description="Freeze Matrix" value="true" tooltip="The transformation is explicitly applied, and the vertex coordinates are actually changed" name="Freeze" isxmlparam="0"/>
+  <Param type="RichBool" description="Apply to all visible Layers" value="false" tooltip="If selected the filter will be applied to all visible mesh layers" name="allLayers" isxmlparam="0"/>
+ </filter>
+ <filter name="Matrix: Freeze Current Matrix">
+  <Param type="RichBool" description="Apply to all visible Layers" value="false" tooltip="If selected the filter will be applied to all visible mesh layers" name="allLayers" isxmlparam="0"/>
+ </filter>
+</FilterScript>
