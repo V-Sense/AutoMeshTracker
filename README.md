@@ -4,7 +4,6 @@ A segmentation-based tracking algorithm for registering volumetric video meshes 
 This is the official implementation of the paper: 
 >Moynihan, M., Ruano, S., Pagés, R. and Smolic, A., 2021. Autonomous Tracking For Volumetric Video Sequences. In Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (pp. 1660-1669).
 
-![](/resource/main.jpg)
 [![Watch the video](https://img.youtube.com/vi/JwO2obk0tJM/maxresdefault.jpg)](https://youtu.be/JwO2obk0tJM)
 
 ## Getting Started
