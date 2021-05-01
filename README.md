@@ -5,6 +5,9 @@ This is the official implementation of the paper:
 >Moynihan, M., Ruano, S., Pagés, R. and Smolic, A., 2021. Autonomous Tracking For Volumetric Video Sequences. In Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (pp. 1660-1669).
 
 ![](/resource/main.jpg)
+<div class="embed-responsive embed-responsive-16by9">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/JwO2obk0tJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
 ## Getting Started
 
