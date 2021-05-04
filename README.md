@@ -77,7 +77,7 @@ hacks and quick fixes. We'll be supporting it over time but PR's and patience ar
 
 * **Matt Moynihan** - [GitHub](https://github.com/mjkmoynihan), [LinkedIn](https://www.linkedin.com/in/mjkmoynihan/)
 
-* **Susana Ruano** - [Scholar](https://scholar.google.com/citations?user=cxZBbhIAAAAJ&hl=en)
+* **Susana Ruano** - [ResearchGate](https://www.researchgate.net/profile/Susana-Ruano-2)
 
 * **Rafael Pages** - [Github](https://github.com/rafapages),[web](https://www.rafapages.com/)
 
