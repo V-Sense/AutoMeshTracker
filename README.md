@@ -44,7 +44,7 @@ In general most default parameters will be in the header files. Some important o
 * mesh_segmentation.h
 * mesh_tracking.h
 * mesh_tracking.cpp:344, set this to true if your input meshes are truly awful. It'll remesh them and hopefully add some stability to processing
-mesh_tracking.cpp:461, by default the detail synthesis is disabled, see [this issue](). Set true to enable and tweak parames in mesh_trackpering.cpp:GetDetailLayer() to suit the input. 
+mesh_tracking.cpp:461, by default the detail synthesis is disabled, see [this issue](https://github.com/V-Sense/AutoMeshTracker/issues/2#issue-875273954). Set true to enable and tweak parames in mesh_trackpering.cpp:GetDetailLayer() to suit the input. 
 
 ### Testing 
 
