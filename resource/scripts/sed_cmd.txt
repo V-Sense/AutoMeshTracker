@@ -1,1 +1,0 @@
-sed -i -e 's/^/..\/resource\/tests\/sequence_test\/rafa_ifsc\/input\//' meshlist.txt
