@@ -9,9 +9,9 @@ This is the official implementation of the paper:
 
 ## Getting Started
 
-* Git clone the repository into your workspace and see instructions below for install:
+* Clone the repository into your workspace and see instructions below for install:
 
-## Installing
+### Installing
 
 1. Install Docker
 
@@ -24,7 +24,7 @@ cd dockers && sh ./build_dockers.sh NUM_JOBS
 
 ** Use as many jobs as your cpu/ram will allow as the docker building is quite slow! **
 
-## Usage 
+### Usage 
 
 To run the code on your own input simply run the following command 
  ```
@@ -46,7 +46,7 @@ In general most default parameters will be in the header files. Some important o
 * mesh_tracking.cpp:344, set this to true if your input meshes are truly awful. It'll remesh them and hopefully add some stability to processing
 mesh_tracking.cpp:461, by default the detail synthesis is disabled, see [this issue](). Set true to enable and tweak parames in mesh_trackpering.cpp:GetDetailLayer() to suit the input. 
 
-## Testing 
+### Testing 
 
 We provide two sequences to test the system, Floss and Matt_Hello.
 In particular Matt_Hello demonstrates a tracked edit on frame 30 where the
