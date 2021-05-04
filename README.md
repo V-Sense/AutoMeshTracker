@@ -77,13 +77,13 @@ hacks and quick fixes. We'll be supporting it over time but PR's and patience ar
 
 * **Matt Moynihan** - [GitHub](https://github.com/mjkmoynihan), [LinkedIn](https://www.linkedin.com/in/mjkmoynihan/)
 
+* **Rafael Pages** - [Github](https://github.com/rafapages),[web](https://www.rafapages.com/)
+
 * **Peter Gadomski** - [Coherent Point Drift Implementation (CPD-ICP)](https://github.com/gadomski/cpd)
 
 * **Yizhi Tang** - [Optimal Step Non-Rigid Registration Implementation](https://github.com/Tonsty/Non-Rigid-Registar)
 
 * **Kaiwen Guo** - [Robust non-rigid motion tracking and surface reconstruction using l0 regularization](https://www.guokaiwen.com/svr.html)
-
-Please see LICENSE.txt for usage and further attributions. 
 
 ## Paper Errata 
 
