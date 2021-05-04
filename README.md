@@ -62,12 +62,6 @@ amount of overlap between meshes
 * Per the usual apology, this is research code and as such it features some coffee-fuelled, late night
 hacks and quick fixes. We'll be supporting it over time but PR's and patience are welcome :) 
 
-## Issues
-* cloud_processing.cpp: UniformsamplePointCloud(), broken with update to PCL. Thin structures are removed from output, probably due to voxel tree size. Temporarily replaced by random sampling
-* matching.cpp:311, temporarily removed alignment criteria to prevent cases where no influencing node could be found 
-* Some components of the detail synthesis step will be store in memory and scale with distance between region boundary and keyframe. It's not a high priority as kfs should be frequent enough but it should be fixed
-* mesh_trackpering.cpp:GetDetailLayer, is still very experimental and needs to be adjusted on a per-sequence basis
-
 ## Preparing keyframes for tracking user-edits
 
 * In blender, use boolean modifier with union to merge the edited objects into one mesh
