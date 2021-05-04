@@ -1,13 +1,11 @@
 #!/bin/bash
 
+# Perform an affine transformation to a sequence of meshes
+
 parent_path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
 
-MSERVER="/meshlab/src/build/distrib/meshlabserver"
+MSERVER="/meshlab/distrib/meshlabserver"
 MLABSCRIPT="/MeshTracker/resource/scripts/abs_tform.mlx"
-
-# To actually use meshlabserver you need to use a virtual framebuffer and export the display 
-# Xvfb :100 &
-# export DISPLAY=:100.0
 
 first_frame=00001
 last_frame=00075
@@ -20,6 +18,6 @@ for frame in $(seq -w $first_frame $last_frame)
 do
 
     fname=${file_pref}${frame}${file_postf}
-    $MSERVER -i $fname -o $fname -s $MLABSCRIPT
+    xvfb-run -a -s "-screen 0 800x600x24"  $MSERVER -i $fname -o $fname -s $MLABSCRIPT
 
 done
