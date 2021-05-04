@@ -1,11 +1,7 @@
 #!/bin/bash
 
-MSERVER="/meshlab/src/build/distrib/meshlabserver"
+MSERVER="/meshlab/distrib/meshlabserver"
 MLABSCRIPT="/MeshTracker/resource/scripts/meshlab_decimate.mlx"
-
-# To actually use meshlabserver you need to use a virtual framebuffer and export the display 
-# Xvfb :100 &
-# export DISPLAY=:100.0
 
 first_frame=00101
 last_frame=00886
@@ -18,6 +14,6 @@ for frame in $(seq -w $first_frame $last_frame)
 do
 
     fname=${file_pref}${frame}${file_postf}
-    $MSERVER -i $fname -o $fname -s $MLABSCRIPT
+    xvfb-run -a -s "-screen 0 800x600x24" $MSERVER -i $fname -o $fname -s $MLABSCRIPT
 
 done
