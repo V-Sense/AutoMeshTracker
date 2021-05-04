@@ -77,13 +77,33 @@ hacks and quick fixes. We'll be supporting it over time but PR's and patience ar
 
 * **Matt Moynihan** - [GitHub](https://github.com/mjkmoynihan), [LinkedIn](https://www.linkedin.com/in/mjkmoynihan/)
 
+* **Susana Ruano** - [Scholar](https://scholar.google.com/citations?user=cxZBbhIAAAAJ&hl=en)
+
 * **Rafael Pages** - [Github](https://github.com/rafapages),[web](https://www.rafapages.com/)
+
+* **Aljosa Smolic** - [Academic Page](https://www.tcd.ie/research/profiles/?profile=smolica)
+
+## Third Party Code
 
 * **Peter Gadomski** - [Coherent Point Drift Implementation (CPD-ICP)](https://github.com/gadomski/cpd)
 
 * **Yizhi Tang** - [Optimal Step Non-Rigid Registration Implementation](https://github.com/Tonsty/Non-Rigid-Registar)
 
 * **Kaiwen Guo** - [Robust non-rigid motion tracking and surface reconstruction using l0 regularization](https://www.guokaiwen.com/svr.html)
+
+## Bibtex
+
+If you find our code useful in your work please consider citing: 
+```
+@InProceedings{Moynihan_2021_WACV,
+        author    = {Moynihan, Matthew and Ruano, Susana and Pages, Rafael and Smolic, Aljosa},
+        title     = {Autonomous Tracking for Volumetric Video Sequences},
+        booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+        month     = {January},
+        year      = {2021},
+        pages     = {1660-1669}
+}
+```
 
 ## Paper Errata 
 
