@@ -38,4 +38,7 @@ RUN mkdir -p /result/smooth
 
 # Tests
 RUN sh /MeshTracker/resource/scripts/dl_tests.sh
+RUN chmod -R u=rw /MeshTracker/resource/tests/
+RUN chmod -R u=rwx /MeshTracker/scripts/
+
 
