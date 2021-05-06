@@ -52,6 +52,11 @@ We provide two sequences to test the system, Floss and Matt_Hello.
 In particular Matt_Hello demonstrates a tracked edit on frame 30 where the
 missing hand details in the original have been added back in. 
 
+You can run the test code with the following command
+ ```
+ docker run --rm --name meshtracker_instance mesh_tracker:latest MeshTracker -t
+ ```
+
 ## Limitations
 
 * Automatic keyframe selection needs to be ported from it's original MATLAB implementation and 
